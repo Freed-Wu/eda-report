@@ -1,0 +1,386 @@
+%&"main"
+% Fakesection 检错
+% Fakesubsubsection 宏包
+\RequirePackage[l2tabu, orthodox]{nag}
+% Fakesubsubsection 编译器
+\RequirePackage{ifxetex}
+\RequireXeTeX
+
+\documentclass{report}
+% Fakesection 基础
+% Fakesubsection 文字
+% Fakesubsubsection 颜色
+\usepackage{xcolor}
+% Fakesubsubsection 长度
+\usepackage{printlen}
+\uselengthunit{mm}
+% Fakesubsubsection 效果
+\usepackage{ulem}
+% Fakesubsubsection 字体
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% Fakesubsubsection 字体美化
+\usepackage{microtype}
+% Fakesubsubsection 字符边框
+\usepackage{varwidth}
+% Fakesubsection 断行
+\usepackage{fvextra}
+% Fakesubsubsection 标点
+% XXX: load csquotes after fvextra to avoid warning <04-10-19> %
+\usepackage{csquotes}
+% Fakesubsection 样式
+% Fakesubsubsection 目录
+\usepackage{titletoc}
+\titlecontents{chapter}[0pt]{\filright}{\contentspush{\thecontentslabel}}{}{\titlerule*{.}\contentspage}
+% Fakesubsubsection 章节
+\usepackage[
+UTF8,
+fontset = windows,
+heading = true,
+zihao = -4,
+sub4section,
+]{ctex}
+\setCJKfamilyfont{zhsong}[AutoFakesubBold = {2.17}]{SimSun}
+\renewcommand*{\songti}{\CJKfamily{zhsong}}
+\ctexset{
+	chapter = {
+		name = 实验,
+		aftername = \hspace{1\ccwd},
+		format = \centering\zihao{3}\heiti\bfseries,
+		beforeskip = 0.5\ccwd,
+		afterskip = 0.5\ccwd,
+	},
+	section = {
+		name = ,
+		number = \chinese{section},
+		aftername = 、,
+		format = \zihao{-3}\heiti\bfseries,
+		beforeskip = 0.5\ccwd,
+		afterskip = 0.5\ccwd,
+	},
+	subsection = {
+		format = \zihao{4}\heiti\bfseries,
+	}
+}
+% Fakesubsubsection 图表
+\usepackage{caption}
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space}
+\captionsetup{font=small}
+\setlength{\abovecaptionskip}{0.5\ccwd}
+\setlength{\belowcaptionskip}{0.5\ccwd}
+% Fakesubsubsection 子图表
+\usepackage{subcaption}
+% Fakesubsubsection 公式
+\setlength{\abovedisplayskip}{0.5em}
+\setlength{\belowdisplayskip}{0.5em}
+% Fakesubsubsection 列表
+\usepackage{enumitem}
+\setlist[enumerate, 1]{
+	fullwidth,
+	label = (\arabic*),
+	font = \textup,
+	itemindent=2em
+}
+\setlist[enumerate, 2]{
+	fullwidth,
+	label = (\alph*),
+	font = \textup,
+	itemindent=4em
+}
+% Fakesubsubsection 代码
+% XXX: need -shell-escape & pygmentize <04-10-19> %
+\usepackage{minted}
+\usepackage{boxie}
+% XXX: avoid boxie's warning <04-10-19> %
+\makeatletter
+\xdefinecolor{tcbcol@back}{rgb}{0,0,0}
+\makeatother
+% Fakesubsubsection 问答
+\usepackage{exercise}
+\usepackage{tasks}
+% Fakesubsubsection 改动
+
+% Fakesection 插入
+% Fakesubsection 表格
+% Fakesubsubsection 三线
+\usepackage{booktabs}
+% Fakesubsubsection 对角线
+\usepackage{diagbox}
+% Fakesubsubsection 合并列
+\usepackage{multicol}
+% Fakesubsubsection 合并行
+\usepackage{multirow}
+% Fakesubsubsection 分割单元格
+\usepackage{makecell}
+% Fakesubsubsection 短表
+\usepackage{tabu}
+% Fakesubsubsection 长表
+\usepackage{longtable}
+% Fakesubsubsection 彩色表
+\usepackage{fancybox}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{theorems}
+\tcbuselibrary{listings}
+\tcbuselibrary{xparse}
+% XXX: need -shell-escape & pygmentize <04-10-19> %
+\tcbuselibrary{minted}
+% Fakesubsubsection 导入数据
+\usepackage{csvsimple}
+% Fakesubsection 图形
+% Fakesubsubsection 插图
+\usepackage{graphicx}
+\graphicspath{{fig/}{etc/}}
+% Fakesubsubsection 环绕
+\usepackage{wrapfig}
+% Fakesubsubsection 图片重叠
+\usepackage{overpic}
+% Fakesubsubsection 徽标
+\usepackage{hologo}
+% Fakesubsubsection 条形码
+\usepackage{ean13isbn}
+% Fakesubsubsection 二维码
+\usepackage{qrcode}
+% Fakesubsection 符号
+% Fakesubsubsection 数学符号
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{textcomp}
+\usepackage{bm}
+% Fakesubsubsection 幻灯片符号
+\usepackage{pifont}
+% Fakesubsubsection 大数学符号
+\usepackage{exscale}
+% Fakesubsubsection 数学符号放缩
+\usepackage{relsize}
+% Fakesubsubsection 公式
+\usepackage{cases}
+\usepackage{physics}
+% Fakesubsubsection 单位
+\usepackage{siunitx}
+% Fakesubsubsection 计算机
+% Fakesubsection 媒体
+\usepackage{media9}
+% Fakesubsection 链接
+\usepackage[
+colorlinks = true,
+linkcolor = gray,
+citecolor = gray,
+backref = page
+]{hyperref}
+% Fakesubsection 批注
+\usepackage{todonotes}
+\usepackage{cooltooltips}
+\usepackage{pdfcomment}
+% Fakesubsection 文本框
+\usepackage{boxedminipage2e}
+% Fakesubsection 页眉页脚
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+	\pagestyle{fancy}
+}
+
+% Fakesection 设计
+% Fakesubsection 水印
+\usepackage{wallpaper}
+% Fakesubsection 主题
+
+% Fakesection 布局
+% Fakesubsection 页面
+\usepackage{geometry}
+% Fakesubsection 缩进
+\usepackage{indentfirst}
+% Fakesubsection 间距
+\usepackage{setspace}
+\usepackage[
+restoremathleading=false,
+UseMSWordMultipleLineSpacing,
+MSWordLineSpacingMultiple=1.5
+]{zhlineskip}
+% Fakesection 引用
+% Fakesubsection 脚注
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}}
+% Fakesubsection 引文
+\usepackage{morewrites}
+\usepackage[square, comma, numbers, super, sort&compress, longnamesfirst, sectionbib, nonamebreak]{natbib}
+% Fakesubsection 题注
+\usepackage{epigraph}
+% Fakesubsection 索引
+\usepackage{makeidx}
+\makeindex
+% Fakesubsection 关联
+% XXX: need amsmath <04-10-19> %
+\numberwithin{Exercise}{chapter}
+\numberwithin{Answer}{chapter}
+
+% Fakesection 特殊功能
+% Fakesubsection 页数统计
+\usepackage{lastpage}
+% Fakesubsection 数学表达式
+\usepackage{calc}
+
+\begin{document}
+% Fakesection 扉页
+
+\begin{titlepage}
+	\centering
+
+	\begin{spacing}{1.5}
+		\zihao{4}
+		\vfill
+	\end{spacing}
+
+	\begin{spacing}{1.5}
+		\fontsize{30pt}{30pt}\selectfont\kaishu
+		\vspace{0.5em}
+
+		南~京~理~工~大~学
+
+		\vspace{0.2em}
+	\end{spacing}
+
+	\begin{spacing}{1.5}
+		\fontsize{45pt}{45pt}\selectfont
+		\textbf{EDA设计（I）}
+
+		\textbf{实验报告}
+	\end{spacing}
+
+	\begin{spacing}{1}
+		\zihao{-1}
+		\vspace{3em}
+	\end{spacing}
+
+	\begin{spacing}{2}
+		\fontsize{16pt}{16pt}\selectfont
+		\begin{tabu}to.8\linewidth{@{}X[5,r]@{}X[c]@{}X[6,l]@{}X[5,r]@{}X[c]@{}X[6,l]@{}}
+			\makebox[4\ccwd][s]{\bf 作者}      & ：&\underline{\makebox[6\ccwd][c]{\kaishu 吴振宇}} & \makebox[4\ccwd][s]{\bf 学号}      & ：&\underline{\makebox[6\ccwd][c]{916101630117}}\\
+			\makebox[4\ccwd][s]{\bf 学院(系)}      & ：&\multicolumn{4}{c}{\underline{\makebox[16\ccwd][c]{\kaishu 电子工程与光电技术学院}}}\\
+			\makebox[4\ccwd][s]{\bf 专业}      & ：&\multicolumn{4}{c}{\underline{\makebox[16\ccwd][c]{\kaishu 电子信息工程}}}
+		\end{tabu}
+
+		\vspace{1em}
+
+		\begin{tabu}to.6\linewidth{@{}X[4,r]@{}X[c]@{}X[12,l]@{}}
+			\makebox[4\ccwd][s]{\bf 指导老师}  & ：&\underline{\makebox[12\ccwd][c]{\kaishu 吴少琴}}\\
+			\makebox[4\ccwd][s]{\bf 实验日期}  & ：&\underline{\makebox[12\ccwd][c]{\kaishu\number\year 年9月14日}}
+		\end{tabu}
+
+		\vspace{1em}
+	\end{spacing}
+
+	\begin{spacing}{2}
+		\fontsize{18pt}{18pt}\selectfont\heiti
+		\number\year 年9月
+	\end{spacing}
+
+\end{titlepage}
+
+% Fakesection 摘要
+
+\renewcommand{\abstractname}{\zihao{3}\heiti\textbf{摘\hspace{2\ccwd}要}}
+\begin{abstract}
+	\vspace{1\ccwd}
+
+	本文根据题目条件，正确设计了满足要求的放大电路，并对其进行了指标的计算、计算机仿真，在最后根据计算结果对仿真结果进行误差分析。\cite{1989模拟电子技术基础,2004模拟电子技术基础简明教程,吴少琴2009电子元器件在电路仿真中的建模}
+
+	实验一，成功设计了合理的单级放大电路，测量了三极管的参数以及放大电路的参数。
+
+	实验二，在单级放大电路的基础上设计了差分放大电路，测量了共模增益和差模增益，\textbf{验证了差分放大能抑制共模信号的结论}。
+
+	实验三，在单级放大电路的基础上设计了两级放大电路，并设计了反馈电阻，测量了开环和闭环两种情况下的放大参数，\textbf{验证了闭环能稳定放大参数的结论}。
+
+	实验四，设计了阶梯波发生器，能通过调节元器件参数改变阶梯波波形。并\textbf{设计了符合要求的只用三极管的阶梯波发生器和反向阶梯波发生器}。
+
+	\vspace{2\ccwd}
+
+	\noindent\textbf{关键词}\hspace{1\ccwd}放大电路\hspace{1\ccwd}计算机仿真\hspace{1\ccwd}阶梯波发生器
+\end{abstract}
+
+\renewcommand{\abstractname}{\zihao{3}\textbf{Abstract}}
+\begin{abstract}
+	\vspace{1em}
+
+	According to the condition of the subject, this paper correctly designs the amplifier circuit which meets the requirement, calculates its index, simulates it by computer, and finally analyses the error of the simulation result according to the calculation result.
+
+	In experiment 1, a reasonable single-stage amplifier circuit was successfully designed, and the parameters of transistor and amplifier circuit were measured.
+
+	In experiment 2, a differential amplifier circuit is designed based on the single-stage amplifier circuit. The common-mode gain and differential-mode gain are measured, and \textbf{the conclusion that differential amplification can suppress common-mode signal is verified}.
+
+	In experiment 3, a two-stage amplifier circuit is designed on the basis of a single-stage amplifier circuit, and a feedback resistor is designed to measure the amplification parameters in both open-loop and closed-loop cases, which \textbf{verifies the conclusion that the closed-loop can stabilize the amplification parameters}.
+
+	In experiment 4, a step wave generator is designed, which can change the parameters of step wave by adjusting the parameters of components. \textbf{A step-wave generator and a reverse step-wave generator using only transistors are designed to meet the requirements}.
+
+	\vspace{2em}
+
+	\noindent\textbf{Keywords}\hspace{1em}Amplifier Circuit\hspace{1em}Computer Simulation\hspace{1em}Stepped Wave Generator
+\end{abstract}
+
+% Fakesection 单面目录页眉页脚
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\chead{\small{\leftmark}}
+\rhead{\small{第\thepage 页}}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+% Fakesection 目录
+
+\pagenumbering{roman}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+
+\renewcommand{\ExerciseName}{问题}
+\renewcommand{\AnswerName}{回答}
+% XXX: make listexercisename center <04-10-19> %
+\renewcommand{\listexercisename}{}
+\chead{问题}
+
+\begin{center}
+	\zihao{3}\heiti
+	\mbox{}
+
+	问题
+	\vspace{-1\ccwd}
+\end{center}
+
+\listofexercises
+
+\newpage
+\chead{\small{\leftmark}}
+\pagenumbering{arabic}
+
+% Fakesection 单面正文页眉页脚
+
+\lhead{\small{\rightmark}}
+\rhead{\small{第\thepage 页~共~\pageref{LastPage}~页}}
+
+% Fakesection 正文
+
+\include{cha/1}
+\include{cha/2}
+\include{cha/3}
+\include{cha/4}
+\include{cha/conclusion}
+
+% Fakesection 参考文献
+
+\addcontentsline{toc}{section}{参考文献}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bib/main}
+
+\end{document}
+
